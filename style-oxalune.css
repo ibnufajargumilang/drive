@@ -42,3 +42,7 @@ body.dark {
 .mode-toggle {
     cursor: pointer;
 }
+
+.hidden {
+    display: none;
+}
