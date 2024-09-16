@@ -39,19 +39,35 @@ generateProducts('promo-terbaik', 'pilihan');
 generateProducts('promo-ebook', 'ebook');
 
 // Dark/Light Mode Toggle
-const toggleModeBtn = document.getElementById('toggleMode');
-const currentMode = localStorage.getItem('theme') || 'light';
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleModeButton = document.getElementById('toggleMode');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
 
-document.body.classList.add(currentMode);
-
-toggleModeBtn.addEventListener('click', function() {
-    if (document.body.classList.contains('light')) {
-        document.body.classList.remove('light');
-        document.body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+    // Cek preferensi mode dari localStorage
+    const currentMode = localStorage.getItem('theme') || 'light';
+    if (currentMode === 'dark') {
+        document.documentElement.classList.add('dark');
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
     } else {
-        document.body.classList.remove('dark');
-        document.body.classList.add('light');
-        localStorage.setItem('theme', 'light');
+        document.documentElement.classList.remove('dark');
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
     }
+
+    toggleModeButton.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+
+        if (document.documentElement.classList.contains('dark')) {
+            moonIcon.classList.add('hidden');
+            sunIcon.classList.remove('hidden');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });
+
