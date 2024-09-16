@@ -12,7 +12,7 @@
 }
 
 body {
-    background-image: url('https://i.ibb.co/9Tg8KrF/whatsapp-bg.png');
+    background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.jpg');
 }
 .expired-label {
     position: absolute;
