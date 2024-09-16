@@ -1,3 +1,4 @@
+/* Animasi dasar */
 .fade-in {
     animation: fadeIn 1s ease-in-out;
 }
@@ -11,9 +12,17 @@
     }
 }
 
-body {
-    background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.jpg');
+/* Warna untuk mode terang dan gelap */
+body.light {
+    background-color: #f0f4f8;
+    color: #333;
 }
+
+body.dark {
+    background-color: #1a202c;
+    color: #fff;
+}
+
 .expired-label {
     position: absolute;
     top: 0;
@@ -24,4 +33,12 @@ body {
     font-size: 12px;
     font-weight: bold;
     border-bottom-left-radius: 8px;
+}
+
+.dark .expired-label {
+    background-color: #ff6347; /* Lebih terang untuk mode gelap */
+}
+
+.mode-toggle {
+    cursor: pointer;
 }
